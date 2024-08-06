@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useEffect } from 'react';
 
 function Form({users, setUsers}) {
 
@@ -16,6 +17,15 @@ function Form({users, setUsers}) {
             ...formData, [name]: value
         })
     }
+
+    useEffect(() => {
+        fetch("http://localhost:3000/users")
+        .then(response => response.json())
+        .then(users => setUsers(users))
+        .catch(error => console.log(error))
+        
+    },[]);
+
 
 const handleSubmit =(e)=> {
     e.preventDefault()

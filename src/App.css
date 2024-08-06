@@ -20,7 +20,7 @@ body {
 }
 
 
-/* .App-logo {
+.App-logo {
   height: 40vmin;
   pointer-events: none;
 }
@@ -53,4 +53,5 @@ body {
   to {
     transform: rotate(360deg);
   }
-} */
+}  
+
