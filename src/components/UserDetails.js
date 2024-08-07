@@ -17,7 +17,7 @@ function UserDetails() {
     // console.log(user)
     if(!user.name){
         return (
-        <div>Loading......</div>
+        <div className="loadOption">Loading......</div>
     )
     }
 
