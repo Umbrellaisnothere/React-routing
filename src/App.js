@@ -30,6 +30,7 @@ function App() {
         <Route path='/users/:id' element={<UserDetails />} />
         <Route path="/users/add"
           element={<Form users={users} setUsers={setUsers} />}/>
+        <Route path="*" element={<Error />} />
       </Routes>
     </div>
   );

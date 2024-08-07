@@ -15,6 +15,12 @@ function UserDetails() {
     },[id])
 
     // console.log(user)
+    if(!user.name){
+        return (
+        <div>Loading......</div>
+    )
+    }
+
   return (
     <div>
         <h1>UserDetails</h1>

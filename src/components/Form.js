@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
-import { useEffect } from 'react';
+import { useNavigate } from 'react';
 
 function Form({users, setUsers}) {
+    const navigate= useNavigate()
 
     const [formData, setFormData] = useState({
         name : "",
@@ -18,15 +19,6 @@ function Form({users, setUsers}) {
         })
     }
 
-    useEffect(() => {
-        fetch("http://localhost:3000/users")
-        .then(response => response.json())
-        .then(users => setUsers(users))
-        .catch(error => console.log(error))
-        
-    },[]);
-
-
 const handleSubmit =(e)=> {
     e.preventDefault()
 
@@ -36,7 +28,9 @@ const handleSubmit =(e)=> {
             "Content-Type": "application/json",
             "Accept": "application/json"
         },
+
         body : JSON.stringify(formData)
+
     })
     .then(res => res.json())
     .then(user => setUsers([user, ...users]))
@@ -45,6 +39,8 @@ const handleSubmit =(e)=> {
         name : "",
         username : ""
     })
+
+    navigate("/")
 }
 
   return (
